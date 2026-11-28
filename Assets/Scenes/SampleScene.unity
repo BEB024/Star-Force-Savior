@@ -775,6 +775,14 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8256738474514826880, guid: 79ff3110ab08f6e48a3af2d05f3106fd, type: 3}
+      propertyPath: xLimitRange
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256738474514826880, guid: 79ff3110ab08f6e48a3af2d05f3106fd, type: 3}
+      propertyPath: yLimitRange
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8970467112633776259, guid: 79ff3110ab08f6e48a3af2d05f3106fd, type: 3}
       propertyPath: m_Name
       value: Player Rig

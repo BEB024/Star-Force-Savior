@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float xLimitRange = 5f;
+    [SerializeField] private float yLimitRange = 5f;
 
     Vector2 movement;
 
@@ -25,9 +27,14 @@ public class PlayerMovement : MonoBehaviour
     public void ShipTranslation()
     {
         float xOffset = movement.x * moveSpeed * Time.deltaTime;
-        float yOffset = movement.y * moveSpeed * Time.deltaTime;
+        float newXPosition = transform.localPosition.x + xOffset;
+        float clampedXPosition = Mathf.Clamp(newXPosition, -xLimitRange, xLimitRange);
 
-        transform.localPosition = new Vector3(transform.localPosition.x + xOffset, transform.localPosition.y + yOffset, 0f);
+        float yOffset = movement.y * moveSpeed * Time.deltaTime;
+        float newYPosition = transform.localPosition.y + yOffset;
+        float clampedYPosition = Mathf.Clamp(newYPosition, -yLimitRange, yLimitRange);
+
+        transform.localPosition = new Vector3(clampedXPosition, clampedYPosition, 0f);
     }
 
 }
